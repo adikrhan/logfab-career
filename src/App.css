@@ -1,38 +1,730 @@
-.App {
-  text-align: center;
+html{scroll-behavior:smooth}
+
+.app {
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  padding: 2.4rem 3%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ============ HERO ============= */
+
+.hero-container {
+  height: 110vh;
+  background-color: #58988e;
+  background-image: url("./assets/hero-bg.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero-content {
+  position: relative;
+  max-width: 2000px;
+  width: 94%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-copy {
+  transform: translateY(-10vh);
+}
+
+.hero-copy h1 {
+  color: white;
+}
+
+.headline-sm {
+  font-size: 4.2rem;
+  font-family: "OswaldExtraLight";
+  letter-spacing: 2px;
+}
+
+.headline-lg {
+  font-size: 10rem;
+  font-family: "OswaldLight";
+  line-height: 100%;
+}
+
+.btn {
+  z-index: 1;
+  font-size: 1.6rem;
+  width: 150px;
+  padding: 1rem 0;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  cursor: pointer;
+  transition: 250ms;
+}
+
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: white;
+  transition: 250ms;
+}
+
+.btn:hover > a {
+  color: #58988e;
+  transition: 250ms;
+}
+
+.bg-img-container {
+  position: absolute;
+  bottom: -200px;
+}
+
+.bg-img-container img {
+  width: 100%;
+}
+
+/* ======== HERO END =========== */
+
+/* ======== COMMUNITY ========== */
+
+.community-container {
+  width: 80%;
+  max-width: 1400px;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 20rem;
+}
+
+.community-copy {
+  padding-left: 6rem;
+  max-width: 78rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.community-copy span {
+  font-size: 2.2rem;
+  font-family: "OswaldLight";
+  color: #58988e;
+}
+
+.community-copy h2 {
+  font-size: 4.4rem;
+  font-family: "OswaldRegular";
+  color: #383838;
+  margin-bottom: 3rem;
+}
+
+.community-copy p {
+  font-size: 2.2rem;
+  font-family: "TitilliumWebLight";
+  color: rgb(43, 43, 43);
+}
+
+/* ======== COMMUNITY END =========== */
+
+/* ======== PHOTO GRID ============ */
+
+.photo-grid {
+  width: 100%;
+  margin-bottom: 20rem;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 7.5rem);
+  gap: 1.2rem;
+}
+
+.grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 250ms;
+  filter: brightness(0.6);
+}
+
+.grid img:hover {
+  filter: brightness(1);
+  transition: 250ms;
+}
+
+.one {
+  grid-row: 1 / 7;
+  grid-column: 1 / 2;
+}
+
+.two {
+  grid-row: 1 / 4;
+  grid-column: 2 / 3;
+}
+
+.three {
+  grid-row: 1 / 5;
+  grid-column: 3 / 4;
+}
+
+.four {
+  grid-row: 1 / 3;
+  grid-column: 4 / 5;
+}
+
+.five {
+  grid-row: 7 / -1;
+  grid-column: 1 / 2;
+}
+
+.six {
+  grid-row: 4 / -1;
+  grid-column: 2 / 3;
+}
+
+.seven {
+  grid-row: 5 / -1;
+  grid-column: 3 / 4;
+}
+
+.eight {
+  grid-row: 3 / -1;
+  grid-column: 4 / 5;
+}
+
+/* ======== PHOTO GRID END ======== */
+
+/* ======== ASSIGNMENTS ========== */
+
+.assignment-container {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  margin: 0 auto;
+  margin-bottom: 20rem;
+
+  width: 80%;
+}
+
+.assignment-copy {
+  max-width: 55rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.assignment-copy span {
+  font-size: 2.2rem;
+  font-family: "OswaldLight";
+  color: #58988e;
+}
+
+.assignment-copy h2 {
+  font-size: 4.4rem;
+  font-family: "OswaldRegular";
+  color: #383838;
+  margin-bottom: 3rem;
+}
+
+.assignment-copy p {
+  font-size: 2.2rem;
+  font-family: "TitilliumWebLight";
+  color: rgb(43, 43, 43);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cards span {
+  align-self: flex-end;
+  color: #58988e;
+  font-size: 1.8rem;
+  font-family: "TitilliumWebLight";
+  cursor: pointer;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 35rem;
+  gap: 4rem;
+}
+
+.card {
+}
+
+.card-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.cards .img-container {
+  background-color: #383838;
+  background-image: url("./assets/card-bg.png");
+  background-size: cover;
+  border-radius: 5px;
+  background-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards .img-container,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: #262d2b;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4rem;
+  justify-content: flex-start;
+}
+
+.card-back span {
+  font-size: 1.6rem;
+  color: white;
+  align-self: flex-start;
+}
+
+.card-back h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-family: "OswaldExtraLight";
+  letter-spacing: 1px;
+}
+
+.card-back p {
+  font-size: 1.8rem;
+  font-family: "OswaldExtraLight";
+  line-height: 160%;
+  letter-spacing: 0.4px;
+}
+
+/* ======== ASSIGNMENTS END ======== */
+
+/* ======== SALARY ========== */
+
+.salary-container {
+  width: 80%;
+  max-width: 1100px;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 12rem;
+  position: relative;
+}
+
+.salary-copy {
+  padding-left: 6rem;
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.salary-copy span {
+  font-size: 2.2rem;
+  font-family: "OswaldLight";
+  color: #58988e;
+}
+
+.salary-copy h2 {
+  font-size: 4.4rem;
+  font-family: "OswaldRegular";
+  color: #383838;
+  margin-bottom: 3rem;
+}
+
+.salary-copy p {
+  font-size: 2.2rem;
+  font-family: "TitilliumWebLight";
+  color: rgb(43, 43, 43);
+  margin-bottom: 3rem;
+}
+
+.salary-copy button {
+  width: 150px;
+  background-color: #58988e;
+  padding: 1rem 0;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-family: "TitilliumWebLight";
+}
+
+.arrow-container {
+  position: absolute;
+  right: 10%;
+  top: 0;
+  transform: translateY(-60%);
+}
+
+/* ======== SALARY END ======== */
+
+/* ====== LOGO ANIMATION ======== */
+
+.logo-animation {
+  position: relative;
+  width: 100%;
+  height: 8.5rem;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  border-bottom: 1px solid;
+}
+
+.logo-animation img {
+  transition: 250ms;
+  position: absolute;
+  top: 50%;
+  animation: spin 4s linear infinite, move-horizontal 14s linear infinite;
+}
+
+
+/* ======== LOGO ANIMATION END ======== */
+
+/* ========== POSITIONS =========== */
+
+.positions-container {
+  display: flex;
+  margin: 0 auto 0 10%;
+  margin-bottom: 16rem;
+  padding-top: 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.postions-content {
+}
+
+.positions-header {
+  margin-bottom: 6rem;
+  display: flex;
+  gap: 8rem;
+}
+
+.positions-header__text {
+}
+
+.positions-header__text span {
+  font-size: 2.2rem;
+  font-family: "OswaldLight";
+  color: #58988e;
+}
+
+.positions-header__text h2 {
+  font-size: 4.4rem;
+  font-family: "OswaldRegular";
+  color: #383838;
+}
+
+.positions-header__arrows {
+  display: flex;
+  gap: 2rem;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.positions-header__arrows svg {
+  font-size: 3rem;
+  opacity: 0.6;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.positions-header__arrows svg:hover {
+  opacity: 1;
+  transition: 250ms;
+}
+
+.positions-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 4rem;
+  width: 100vw;
+  height: 30rem;
+  margin-bottom: 3.2rem;
+}
+
+.positions-cards__card {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url("./assets/positions-card-bg.png");
+  background-size: cover;
+  background-blend-mode: multiply;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: "OswaldRegular";
   color: white;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.positions-cards__card:hover > h3 {
+  transition: 250ms;
+  transform: translateY(-10px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.positions-cards__card:hover > .info-hidden {
+  transition: 250ms;
+  opacity: 1;
+}
+
+.positions-cards__card h3 {
+  font-size: 3.6rem;
+  font-family: "OswaldExtraLight";
+  letter-spacing: 0.4px;
+  transition: 250ms;
+  margin-bottom: 1rem;
+  transform: translateY(30px);
+}
+
+.info-hidden {
+  transition: 250ms;
+  opacity: 0;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.info-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* ======== POSITIONS END ======== */
+
+/* ========== COWORKERS =========== */
+
+.coworkers-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/coworkers.png");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.coworkers-number {
+  justify-self: end;
+  text-align: right;
+  padding: 4rem;
+}
+
+.coworkers-number__nr,
+.coworkers-slack__nr {
+  font-size: 4.8rem;
+  color: white;
+  background-color: transparent;
+  border: 10px solid white;
+  padding: 1.6rem;
+  display: inline-flex;
+  font-family: "OswaldMedium";
+}
+
+.coworkers-container h2 {
+  color: white;
+  font-size: 4.8rem;
+}
+
+.coworkers-slack {
+  align-self: flex-end;
+  padding: 4rem;
+}
+
+/* ======== COWORKERS END ======== */
+
+/* ========== CONTACT =========== */
+
+.contact-container {
+  width: 90%;
+  display: flex;
+  margin: 16rem auto;
+  position: relative;
+}
+
+.contact-copy {
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-copy span {
+  font-size: 2.2rem;
+  font-family: "OswaldLight";
+  color: #58988e;
+}
+
+.contact-copy h2 {
+  font-size: 4.4rem;
+  font-family: "OswaldRegular";
+  color: #383838;
+  margin-bottom: 3rem;
+}
+
+.contact-copy p {
+  font-size: 2.2rem;
+  font-family: "TitilliumWebLight";
+  color: rgb(43, 43, 43);
+  margin-bottom: 3rem;
+}
+
+.address-container {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.address-container__address,
+.address-container__contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-container__address span,
+.address-container__contact span {
+  color: black;
+  font-size: 2rem;
+  font-family: "TitilliumWebLight";
+}
+
+.social-container {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.social-container svg {
+  transition: 250ms;
+  font-size: 2.6rem;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.social-container svg:hover {
+  opacity: 1;
+  transition: 250ms;
+}
+
+/* ======== CONTACT END ======== */
+
+/* ========== FOOTER =========== */
+
+.footer-container {
+  width: 100%;
+}
+
+.footer-content {
+  position: relative;
+  width: 90%;
+  border-top: 1px solid black;
+  padding: 1rem 0.6rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content nav ul {
+  display: flex;
+  gap: 2.6rem;
+  list-style: none;
+}
+
+.footer-content nav ul li {
+  font-size: 1.8rem;
+  color: rgb(110, 110, 110);
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.footer-content nav ul li:hover {
+  color: black;
+  transition: 250ms;
+}
+
+.footer-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer-logo img {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
   }
-  to {
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@keyframes move-horizontal {
+  0% {
+    left: 10%;
+  }
+  50% {
+    left: 90%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+
+@keyframes move-vertical {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
   }
 }
